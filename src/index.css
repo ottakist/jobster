@@ -1,11 +1,11 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
+
 *,
 ::after,
 ::before {
   box-sizing: border-box;
 }
-
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@400;700&display=swap');
 
 html {
   font-size: 100%;
@@ -225,6 +225,7 @@ ul {
   margin-bottom: 0.5rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
+  text-align: initial;
 }
 .form-input,
 .form-textarea,
