@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '../components/Logo';
+import {Logo} from '../components/';
 import Wrapper from '../assets/wrappers/RegisterPage';
 import FormRow from '../components/FormRow';
 import { toast } from 'react-toastify';
@@ -53,6 +53,7 @@ const Register = () => {
   return (
     <Wrapper className='full-page'>
       <form className='form' onSubmit={onSubmit}>
+        <Logo />
         <h3>{userData.isMember ? 'Login' : 'Register'}</h3>
         {!userData.isMember && (
           <FormRow
