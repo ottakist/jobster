@@ -15,20 +15,20 @@ const initialState = {
 };
 
 const Register = () => {
-  const [values, setValues] = useState(initialState);
+  const [userData, setUserData] = useState(initialState);
   const { user, isLoading } = useSelector((store) => store.user);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setValues({ ...values, [name]: value });
+    setUserData({ ...userData, [name]: value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password, isMember } = values;
+    const { name, email, password, isMember } = userData;
     if (!email || !password || (!isMember && !name)) {
       toast.error('Please Fill Out All Fields');
       return;
@@ -40,7 +40,7 @@ const Register = () => {
     dispatch(loginUser({ email, password }));
   };
   const toggleMember = () => {
-    setValues({ ...values, isMember: !values.isMember });
+    setUserData({ ...userData, isMember: !userData.isMember });
   };
 
   useEffect(() => {
@@ -53,12 +53,12 @@ const Register = () => {
   return (
     <Wrapper className='full-page'>
       <form className='form' onSubmit={onSubmit}>
-        <h3>{values.isMember ? 'Login' : 'Register'}</h3>
-        {!values.isMember && (
+        <h3>{userData.isMember ? 'Login' : 'Register'}</h3>
+        {!userData.isMember && (
           <FormRow
             type={'text'}
             name={'name'}
-            value={values.name}
+            value={userData.name}
             handleChange={handleChange}
             labelText={'Name'}
           />
@@ -66,14 +66,14 @@ const Register = () => {
         <FormRow
           type={'email'}
           name={'email'}
-          value={values.email}
+          value={userData.email}
           handleChange={handleChange}
           labelText={'email'}
         />
         <FormRow
           type={'password'}
           name={'password'}
-          value={values.password}
+          value={userData.password}
           handleChange={handleChange}
           labelText={'password'}
         />
@@ -82,10 +82,10 @@ const Register = () => {
           {`${isLoading ? 'loading...' : 'submit'}`}
         </button>
         <p>
-          {values.isMember ? 'Not a member yet?' : 'Already a member?'}
+          {userData.isMember ? 'Not a member yet?' : 'Already a member?'}
 
           <button type='button' onClick={toggleMember} className='member-btn'>
-            {values.isMember ? 'Register' : 'Login'}
+            {userData.isMember ? 'Register' : 'Login'}
           </button>
         </p>
       </form>
