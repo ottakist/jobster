@@ -8,7 +8,6 @@ import {
   Stats,
   AddJob,
 } from './pages/dashboard';
-import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProtectedRoute from './pages/ProtectedRoute';

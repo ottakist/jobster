@@ -9,15 +9,13 @@ const Landing = () => {
         <Logo />
       </nav>
       <div className='container page'>
-        {/* info */}
         <div className='info'>
           <h1>
             job <span>tracking</span> app
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quasi
-            cumque iure quod blanditiis assumenda ipsam quaerat ad architecto
-            perspiciatis!
+            Make job hunting a breeze - manage offers and responses effortlessly
+            <br />with our app.
           </p>
           <Link to='/register' className='btn btn-hero'>
             Login/Register

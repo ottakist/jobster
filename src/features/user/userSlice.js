@@ -7,7 +7,6 @@ import {
   addUserToLocalStorage,
   removeUserFromLocalStorage,
 } from '../../utils/localStorage';
-
 const initialState = {
   isLoading: false,
   isSidebarOpen: false,
@@ -56,7 +55,7 @@ const userSlice = createSlice({
         const { user } = payload;
         state.isLoading = false;
         addUserToLocalStorage(user);
-        state.user = payload;
+        state.user = user;
         toast.success(`Hello ${user.name}`);
       }),
       builder.addCase(registerUser.rejected, (state, { payload }) => {
@@ -70,7 +69,7 @@ const userSlice = createSlice({
         const { user } = payload;
         state.isLoading = false;
         addUserToLocalStorage(user);
-        state.user = payload;
+        state.user = user;
         toast.success(`Welcome back ${user.name}`);
       }),
       builder.addCase(loginUser.rejected, (state, { payload }) => {
