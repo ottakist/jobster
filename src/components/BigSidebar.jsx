@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Wrapper from '../assets/wrappers/BigSidebar';
-import Logo from './logo';
+import Logo from './Logo';
 import NavLinks from './NavLinks';
 const BigSidebar = () => {
   const { isSidebarOpen } = useSelector((state) => state.user);
@@ -18,7 +18,7 @@ const BigSidebar = () => {
           <header>
             <Logo />
           </header>
-          <NavLinks/>
+          <NavLinks />
         </div>
       </div>
     </Wrapper>

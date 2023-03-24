@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Wrapper from '../assets/wrappers/SmallSidebar';
-import Logo from './logo';
+import Logo from './Logo';
 import NavLinks from './NavLinks';
 import { FaTimes } from 'react-icons/fa';
 import { toggleSidebar } from '../features/user/userSlice';

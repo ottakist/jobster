@@ -6,11 +6,11 @@ import {
   FaCaretDown,
   FaCaretUp,
 } from 'react-icons/fa';
-import Logo from './logo';
+import Logo from './Logo';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser, toggleSidebar } from '../features/user/userSlice';
 const Navbar = () => {
-  const { user }= useSelector((store) => store.user);
+  const { user } = useSelector((store) => store.user);
 
   const dispatch = useDispatch();
   const [showLogout, setShowLogout] = useState(false);

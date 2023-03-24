@@ -1,7 +1,7 @@
 import main from '../assets/images/main.svg';
-import Logo from '../components/logo';
+import Logo from '../components/Logo';
 import Wrapper from '../assets/wrappers/LandingPage';
-import {Link} from'react-router-dom'
+import { Link } from 'react-router-dom';
 const Landing = () => {
   return (
     <Wrapper>
@@ -15,7 +15,8 @@ const Landing = () => {
           </h1>
           <p>
             Make job hunting a breeze - manage offers and responses effortlessly
-            <br />with our app.
+            <br />
+            with our app.
           </p>
           <Link to='/register' className='btn btn-hero'>
             Login/Register
