@@ -25,7 +25,6 @@ export const updateUserThunk = async (url, user, thunkAPI) => {
         authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
       },
     });
-    console.log(response);
     return response.data;
   } catch (error) {
     if (error.response.status === 401) {
