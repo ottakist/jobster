@@ -4,8 +4,13 @@ import FormRow from '../../components/FormRow';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import FormRowSelect from '../../components/FormRowSelect';
-import { handleChange, clearValues } from '../../features/job/jobSlice';
-import { createJob } from '../../features/job/jobSlice';
+import {
+  handleChange,
+  clearValues,
+  createJob,
+  editJob
+} from '../../features/job/jobSlice';
+
 
 const AddJob = () => {
   const {
@@ -26,6 +31,21 @@ const AddJob = () => {
 
     if (!position || !company || !jobLocation) {
       toast.error('Please Fill Out All Fields');
+      return;
+    }
+    if (isEditing) {
+      dispatch(
+        editJob({
+          jobId: editJobId,
+          job: {
+            position,
+            company,
+            jobLocation,
+            jobType,
+            status,
+          },
+        })
+      );
       return;
     }
     dispatch(createJob({ position, company, jobLocation, jobType, status }));
