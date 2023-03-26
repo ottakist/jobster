@@ -83,6 +83,19 @@ const Register = () => {
           {`${isLoading ? 'loading...' : 'submit'}`}
         </button>
         <p>
+          <button
+            type='button'
+            onClick={() =>
+              dispatch(
+                loginUser({ email: 'testUser@test.com', password: 'secret' })
+              )
+            }
+            className='btn'
+          >
+            Try testing profile
+          </button>
+        </p>
+        <p>
           {userData.isMember ? 'Not a member yet?' : 'Already a member?'}
 
           <button type='button' onClick={toggleMember} className='member-btn'>
