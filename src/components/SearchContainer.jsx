@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Wrapper from '../assets/wrappers/SearchContainer';
 import FormRowSelect from './FormRowSelect';
 import FormRow from './FormRow';
-import { handleChange, clearValues } from '../features/job/jobSlice';
+import { handleChange, clearFilters } from '../features/allJobs/allJobsSlice';
 const SearchContainer = () => {
   const { isLoading, search, searchStatus, searchType, sort, sortOptions } =
     useSelector((store) => store.allJobs);
@@ -24,12 +24,12 @@ const SearchContainer = () => {
         <h3>Search form</h3>
 
         <div className='form-center'>
-          {/* <FormRow
+          <FormRow
             type='text'
             name='search'
-            value={lo}
+            value={search}
             handleChange={handleInput}
-          /> */}
+          />
 
           <FormRowSelect
             labelText={'Status'}
@@ -41,7 +41,7 @@ const SearchContainer = () => {
 
           <FormRowSelect
             labelText='Type'
-            name='jobType'
+            name='searchType'
             value={searchType}
             handleChange={handleInput}
             list={['all', ...jobTypeOptions]}
@@ -59,7 +59,7 @@ const SearchContainer = () => {
             <button
               type='button'
               className='btn btn-block btn-danger'
-              onClick={() => dispatch(clearValues())}
+              onClick={() => dispatch(clearFilters())}
             >
               clear
             </button>

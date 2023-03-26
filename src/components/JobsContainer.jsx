@@ -3,6 +3,7 @@ import Wrapper from '../assets/wrappers/JobsContainer';
 import Loading from './Loading';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllJobs } from '../features/allJobs/allJobsSlice';
+import PageBtnContainer from './PageBtnContainer';
 import Job from './Job';
 const JobsContainer = () => {
   const {
@@ -17,9 +18,9 @@ const JobsContainer = () => {
     sort,
   } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
-  useEffect(()=>{
-   dispatch(getAllJobs())
-  },[])
+  useEffect(() => {
+    dispatch(getAllJobs());
+  }, [page,search,searchStatus,searchType,sort]);
   if (isLoading) {
     return <Loading center />;
   }
@@ -40,7 +41,6 @@ const JobsContainer = () => {
       <div className='jobs'>
         {jobs.map((job) => {
           return <Job key={job._id} {...job} />;
-
         })}
       </div>
       {numOfPages > 1 && <PageBtnContainer />}
