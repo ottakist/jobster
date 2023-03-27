@@ -50,6 +50,7 @@ const allJobsSlice = createSlice({
     hideLoading: (state) => {
       state.isLoading = false;
     },
+    clearJobsState:()=> initialState
   },
   extraReducers: (builder) => {
     // getJobs
@@ -87,5 +88,6 @@ export const {
   showLoading,
   hideLoading,
   changePage,
+  clearJobsState,
 } = allJobsSlice.actions;
 export default allJobsSlice.reducer;
