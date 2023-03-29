@@ -1,6 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Wrapper = styled.article`
+  max-width: 30%;
+  width: 100%;
   padding: 2rem;
   background: var(--white);
   border-radius: var(--borderRadius);
@@ -36,6 +38,34 @@ const Wrapper = styled.article`
       color: ${(props) => props.color};
     }
   }
-`
+  @media (max-width: 767px) {
+    .count {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .icon {
+      width: 35px;
+      height: 30px;
+      background: ${(props) => props.bcg};
+      border-radius: var(--borderRadius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        font-size: 1.3rem;
+        color: ${(props) => props.color};
+      }
+    }
+    .title {
+      font-size: 10px;
+      margin: 0;
+      text-transform: capitalize;
+      letter-spacing: var(--letterSpacing);
+      text-align: left;
+      margin-top: 0.5rem;
+    }
+  }
+`;
 
-export default Wrapper
+export default Wrapper;
