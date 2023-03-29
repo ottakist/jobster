@@ -39,10 +39,11 @@ const Wrapper = styled.article`
     }
   }
   @media (max-width: 767px) {
+    padding:1rem 2rem;
     .count {
       display: block;
       font-weight: 700;
-      font-size: 20px;
+      font-size: 25px;
     }
     .icon {
       width: 35px;
@@ -58,7 +59,7 @@ const Wrapper = styled.article`
       }
     }
     .title {
-      font-size: 10px;
+      font-size: 12px;
       margin: 0;
       text-transform: capitalize;
       letter-spacing: var(--letterSpacing);
